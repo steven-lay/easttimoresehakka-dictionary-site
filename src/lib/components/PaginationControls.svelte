@@ -15,28 +15,27 @@ function onChangePage(val) {
   <div class="page-display">
     Page {curPage} of {totalPages}
   </div>
-  <div
-    class="pagination-button pagination-button-left"
-    class:cursor-pointer={curPage > 1}
-    class:disabled={curPage == 1}
+  <button
+    class="pagination-button"
+    disabled={curPage == 1}
     on:click={() => onChangePage(0)}
   >
     &#60; Previous
-  </div>
-  <div
+  </button>
+  <button
     class="pagination-button"
-    class:cursor-pointer={curPage < totalPages}
-    class:disabled={curPage >= totalPages}
+    disabled={curPage >= totalPages}
     on:click={() => onChangePage(1)}
   >
     Next >
-  </div>
+  </button>
 </div>
 
 <style>
 .pagination-area {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin-top: 1.5rem;
   font-weight: bold;
 }
@@ -45,23 +44,9 @@ function onChangePage(val) {
   margin-right: 1rem;
 }
 
-.pagination-button:not(.disabled) {
-  color: indigo;
-  cursor: pointer;
-}
-
-.pagination-button:active {
-  background-color: rgb(230, 230, 230);
-}
-
-.pagination-button-left {
-  margin-right: 1rem;
-}
-
-.disabled,
-.disabled:active {
-  color: lightgray;
-  background-color: transparent;
+.pagination-button {
+  padding: 1rem;
+  width: 7rem;
 }
 
 .select-none {
