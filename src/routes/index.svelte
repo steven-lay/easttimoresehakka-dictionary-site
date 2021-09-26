@@ -1,12 +1,14 @@
 <script>
 import PaginationControls from '$lib/components/PaginationControls.svelte'
 import ResultTable from '$lib/components/ResultTable.svelte'
+import Filter from '$lib/components/Filter.svelte'
 import { onMount } from 'svelte'
 import { getSheetEntries } from '$lib/functions/getSheetEntries'
 
 let results = []
 let categories = ['All']
 let loading = true
+let filterTxt = ''
 
 onMount(async () => {
   const { results: result, newCategories } = await getSheetEntries()
@@ -23,10 +25,15 @@ const entriesPerPage = 10
 $: curPage = 1
 $: totalEntries = results.length
 $: totalPages = Math.ceil(totalEntries / entriesPerPage)
-$: shownItems = results.slice(
+$: filteredItems = results.filter((item) =>
+  item.definition.toLowerCase().includes(filterTxt.toLowerCase())
+)
+$: shownItems = filteredItems.slice(
   (curPage - 1) * entriesPerPage,
   (curPage - 1) * entriesPerPage + entriesPerPage
 )
+
+$: console.log(filteredItems)
 
 function changePage(forwards) {
   if (forwards.detail) {
@@ -34,6 +41,11 @@ function changePage(forwards) {
   } else {
     curPage = curPage == 1 ? curPage : --curPage
   }
+}
+
+function setFilteredText(filter) {
+  console.log(filter.detail)
+  filterTxt = filter.detail
 }
 </script>
 
@@ -43,8 +55,8 @@ function changePage(forwards) {
   {#if loading}
     <p>Loading results...</p>
   {:else}
+    <Filter on:filter-text={(txt) => setFilteredText(txt)} />
     <ResultTable data={shownItems} />
-
     <PaginationControls
       {curPage}
       {totalPages}
