@@ -33,6 +33,11 @@ $: shownItems = filteredItems.slice(
 $: totalEntries = filteredItems.length
 $: totalPages = totalEntries ? Math.ceil(totalEntries / entriesPerPage) : 1
 
+$: {
+  filteredItems
+  curPage = 1
+}
+
 function changePage(forwards) {
   if (forwards.detail) {
     curPage = curPage >= totalPages ? curPage : ++curPage
