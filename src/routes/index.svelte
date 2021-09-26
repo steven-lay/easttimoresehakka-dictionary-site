@@ -1,7 +1,8 @@
 <script>
+import PaginationControls from '$lib/components/PaginationControls.svelte'
+import ResultTable from '$lib/components/ResultTable.svelte'
 import { onMount } from 'svelte'
 import { getSheetEntries } from '$lib/functions/getSheetEntries'
-import ResultTable from '$lib/components/ResultTable.svelte'
 
 let results = []
 let categories = ['All']
@@ -28,7 +29,7 @@ $: shownItems = results.slice(
 )
 
 function changePage(forwards) {
-  if (forwards) {
+  if (forwards.detail) {
     curPage = curPage >= totalPages ? curPage : ++curPage
   } else {
     curPage = curPage == 1 ? curPage : --curPage
@@ -44,27 +45,11 @@ function changePage(forwards) {
   {:else}
     <ResultTable data={shownItems} />
 
-    <div class="pagination-area select-none">
-      <div class="page-display">
-        Page {curPage} of {totalPages}
-      </div>
-      <div
-        class="pagination-button pagination-button-left"
-        class:cursor-pointer={curPage > 1}
-        class:disabled={curPage == 1}
-        on:click={() => changePage(0)}
-      >
-        &#60; Previous
-      </div>
-      <div
-        class="pagination-button"
-        class:cursor-pointer={curPage < totalPages}
-        class:disabled={curPage >= totalPages}
-        on:click={() => changePage(1)}
-      >
-        Next >
-      </div>
-    </div>
+    <PaginationControls
+      {curPage}
+      {totalPages}
+      on:change-page={(val) => changePage(val)}
+    />
   {/if}
 </div>
 
@@ -79,42 +64,5 @@ function changePage(forwards) {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 1rem;
-}
-
-.pagination-area {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 1.5rem;
-  font-weight: bold;
-}
-
-.page-display {
-  margin-right: 1rem;
-}
-
-.pagination-button:not(.disabled) {
-  color: indigo;
-  cursor: pointer;
-}
-
-.pagination-button:active {
-  background-color: rgb(230, 230, 230);
-}
-
-.pagination-button-left {
-  margin-right: 1rem;
-}
-
-.disabled,
-.disabled:active {
-  color: lightgray;
-  background-color: transparent;
-}
-
-.select-none {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 </style>
