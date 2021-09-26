@@ -9,6 +9,7 @@ let results = []
 let categories = []
 let loading = true
 
+/* Retrieve dictionary entries from Google sheets */
 onMount(async () => {
   const { results: result, newCategories } = await getSheetEntries()
 
@@ -25,18 +26,25 @@ $: filterCat = ''
 const entriesPerPage = 10
 
 $: curPage = 1
+
 $: filteredItems = results.filter(
   (item) =>
     item.definition.toLowerCase().includes(filterTxt.toLowerCase()) &&
     item.category.includes(filterCat)
 )
+
+/* The entries that are actually rendered on the table */
 $: shownItems = filteredItems.slice(
   (curPage - 1) * entriesPerPage,
   (curPage - 1) * entriesPerPage + entriesPerPage
 )
+
 $: totalEntries = filteredItems.length
+
+/* totalPages can be 0 if totalEntries is 0, so put a min of 1 */
 $: totalPages = totalEntries ? Math.ceil(totalEntries / entriesPerPage) : 1
 
+/* If there is a change in filters, change page back to 1 */
 $: {
   filteredItems
   curPage = 1
