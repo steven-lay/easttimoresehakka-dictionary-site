@@ -120,6 +120,7 @@ function changePage(forwards) {
 <style>
 .main-container {
   max-width: 80rem;
+  padding: 0 1rem;
   margin: 1rem auto;
 }
 
