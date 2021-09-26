@@ -140,8 +140,9 @@ function changePage(forwards) {
   margin-right: 1rem;
 }
 
-.pagination-button {
+.pagination-button:not(.disabled) {
   color: indigo;
+  cursor: pointer;
 }
 
 .pagination-button:active {
@@ -177,7 +178,7 @@ th {
 
 td,
 th {
-  padding: 0.2rem 1rem;
+  padding: 0.5rem 1rem;
   border: 1px solid rgb(200, 200, 200);
 }
 
