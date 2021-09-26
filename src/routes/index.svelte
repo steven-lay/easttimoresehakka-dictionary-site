@@ -1,48 +1,15 @@
-<script context="module">
-export const SHEET_ID = import.meta.env.VITE_APP_SHEET_ID
-export const SHEET_API_KEY = import.meta.env.VITE_APP_SHEET_API_KEY
-</script>
-
 <script>
 import { onMount } from 'svelte'
-import axios from 'axios'
-
-/* Convert numbers in romanisation to tone superscript */
-function numToSuperScript(inputStr) {
-  return inputStr.replace(/([0-9])/g, '<sup>$&</sup>')
-}
+import { getSheetEntries } from '$lib/functions/getSheetEntries'
 
 let results = []
 let categories = ['All']
 let loading = true
 
 onMount(async () => {
-  const sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Dictionary/?alt=json&key=${SHEET_API_KEY}`
-  const res = await axios.get(sheetUrl)
-  const data = res.data.values /* Assume no errors for now */
+  const { results: result, newCategories } = await getSheetEntries()
 
-  data.shift() /* Get rid of header row */
-
-  /* 
-    row[0] = Romanisation
-    row[1] = Chinese
-    row[2] = English
-    row[3] = Category
-  */
-  data.forEach((row) => {
-    const obj = {
-      entry: numToSuperScript(row[0]) + '<br/>' + row[1],
-      definition: row[2],
-      category: row[3],
-    }
-    results.push(obj)
-  })
-
-  // Trigger reactivity
-  results = results
-
-  // Get list of categories
-  let newCategories = [...new Set(results.flatMap(({ category }) => category))].sort()
+  results = [...results, ...result]
   categories = [...categories, ...newCategories]
 
   loading = false
