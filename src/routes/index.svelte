@@ -23,8 +23,6 @@ onMount(async () => {
 const entriesPerPage = 10
 
 $: curPage = 1
-$: totalEntries = results.length
-$: totalPages = Math.ceil(totalEntries / entriesPerPage)
 $: filteredItems = results.filter((item) =>
   item.definition.toLowerCase().includes(filterTxt.toLowerCase())
 )
@@ -32,8 +30,8 @@ $: shownItems = filteredItems.slice(
   (curPage - 1) * entriesPerPage,
   (curPage - 1) * entriesPerPage + entriesPerPage
 )
-
-$: console.log(filteredItems)
+$: totalEntries = filteredItems.length
+$: totalPages = totalEntries ? Math.ceil(totalEntries / entriesPerPage) : 1
 
 function changePage(forwards) {
   if (forwards.detail) {
