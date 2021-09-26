@@ -1,6 +1,7 @@
 <script>
 import { onMount } from 'svelte'
 import { getSheetEntries } from '$lib/functions/getSheetEntries'
+import ResultTable from '$lib/components/ResultTable.svelte'
 
 let results = []
 let categories = ['All']
@@ -41,24 +42,7 @@ function changePage(forwards) {
   {#if loading}
     <p>Loading results...</p>
   {:else}
-    <table>
-      <thead>
-        <tr>
-          <th>Entry</th>
-          <th>Definition</th>
-          <th>Category</th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each shownItems as row}
-          <tr>
-            <td>{@html row.entry}</td>
-            <td>{row.definition}</td>
-            <td>{row.category}</td>
-          </tr>
-        {/each}
-      </tbody>
-    </table>
+    <ResultTable data={shownItems} />
 
     <div class="pagination-area select-none">
       <div class="page-display">
@@ -132,25 +116,5 @@ function changePage(forwards) {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-table {
-  border-collapse: collapse;
-  table-layout: fixed;
-  width: 100%;
-}
-
-th {
-  text-align: left;
-}
-
-td,
-th {
-  padding: 0.5rem 1rem;
-  border: 1px solid rgb(200, 200, 200);
-}
-
-tbody tr:hover {
-  background-color: rgb(250, 250, 250);
 }
 </style>
