@@ -23,7 +23,7 @@ function onSelectChange(e) {
 </script>
 
 <div class="filter-section">
-  <div>
+  <div class="search-area">
     <label for="search-entry">Search term:</label>
     <input
       bind:this={inputEl}
@@ -51,21 +51,44 @@ function onSelectChange(e) {
 </div>
 
 <style>
-.filter-section {
-  display: flex;
-  padding: 2rem 0;
-  align-items: center;
+label {
+  display: block;
 }
 
-.search-input {
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.search-input,
+select {
   padding: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .select-area {
   margin-left: 2rem;
 }
 
-select {
-  padding: 0.5rem;
+@media (max-width: 600px) {
+  .search-area {
+    flex-grow: 1;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .select-area {
+    margin-left: 0;
+    margin-top: 1rem;
+    flex-grow: 1;
+  }
+
+  select {
+    width: 100%;
+  }
 }
 </style>

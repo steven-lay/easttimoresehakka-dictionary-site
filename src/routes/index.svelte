@@ -99,4 +99,10 @@ function setFilteredCategory(cat) {
   font-weight: 500;
   margin-bottom: 1rem;
 }
+
+@media (max-width: 500px) {
+  .main-heading {
+    text-align: center;
+  }
+}
 </style>
