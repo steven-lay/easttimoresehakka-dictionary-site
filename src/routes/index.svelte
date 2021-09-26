@@ -6,9 +6,8 @@ import { onMount } from 'svelte'
 import { getSheetEntries } from '$lib/functions/getSheetEntries'
 
 let results = []
-let categories = ['All']
+let categories = []
 let loading = true
-let filterTxt = ''
 
 onMount(async () => {
   const { results: result, newCategories } = await getSheetEntries()
@@ -19,12 +18,17 @@ onMount(async () => {
   loading = false
 })
 
+$: filterTxt = ''
+$: filterCat = ''
+
 /* Pagination testing */
 const entriesPerPage = 10
 
 $: curPage = 1
-$: filteredItems = results.filter((item) =>
-  item.definition.toLowerCase().includes(filterTxt.toLowerCase())
+$: filteredItems = results.filter(
+  (item) =>
+    item.definition.toLowerCase().includes(filterTxt.toLowerCase()) &&
+    item.category.includes(filterCat)
 )
 $: shownItems = filteredItems.slice(
   (curPage - 1) * entriesPerPage,
@@ -47,8 +51,11 @@ function changePage(forwards) {
 }
 
 function setFilteredText(filter) {
-  console.log(filter.detail)
   filterTxt = filter.detail
+}
+
+function setFilteredCategory(cat) {
+  filterCat = cat.detail
 }
 </script>
 
@@ -58,7 +65,11 @@ function setFilteredText(filter) {
   {#if loading}
     <p>Loading results...</p>
   {:else}
-    <Filter on:filter-text={(txt) => setFilteredText(txt)} />
+    <Filter
+      {categories}
+      on:filter-text={(txt) => setFilteredText(txt)}
+      on:filter-category={(cat) => setFilteredCategory(cat)}
+    />
     <ResultTable data={shownItems} />
     <PaginationControls
       {curPage}
