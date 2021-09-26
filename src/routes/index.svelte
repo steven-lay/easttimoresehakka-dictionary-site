@@ -52,9 +52,9 @@ $: {
 
 function changePage(forwards) {
   if (forwards.detail) {
-    curPage = curPage >= totalPages ? curPage : ++curPage
+    curPage = ++curPage
   } else {
-    curPage = curPage == 1 ? curPage : --curPage
+    curPage = --curPage
   }
 }
 
