@@ -30,12 +30,13 @@ table {
 
 th {
   text-align: left;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgb(230, 230, 230);
 }
 
-td,
-th {
-  padding: 0.5rem 1rem;
-  border: 1px solid rgb(200, 200, 200);
+td {
+  padding: 0.5rem 1.5rem;
+  border-bottom: 1px solid rgb(230, 230, 230);
 }
 
 tbody tr:hover {

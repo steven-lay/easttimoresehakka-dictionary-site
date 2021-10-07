@@ -9,4 +9,11 @@
   overflow-y: scroll;
   font-family: 'Roboto', sans-serif;
 }
+
+:global(.select-none) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 </style>

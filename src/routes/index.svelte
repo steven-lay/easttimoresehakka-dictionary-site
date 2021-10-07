@@ -91,5 +91,7 @@ function setFilteredCategory(cat) {
   max-width: 80rem;
   padding: 1rem 1rem;
   margin: 1rem auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }
 </style>
