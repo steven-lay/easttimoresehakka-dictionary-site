@@ -1,9 +1,9 @@
 <script>
+import FilterHeader from '$lib/components/FilterHeader.svelte'
 import PaginationControls from '$lib/components/PaginationControls.svelte'
 import ResultTable from '$lib/components/ResultTable.svelte'
-import Filter from '$lib/components/Filter.svelte'
-import { onMount } from 'svelte'
 import { getSheetEntries } from '$lib/functions/getSheetEntries'
+import { onMount } from 'svelte'
 
 let results = []
 let categories = []
@@ -67,17 +67,16 @@ function setFilteredCategory(cat) {
 }
 </script>
 
-<div class="main-container">
-  <h1 class="main-heading">East Timorese Hakka Dictionary</h1>
+<FilterHeader
+  {categories}
+  on:filter-text={(txt) => setFilteredText(txt)}
+  on:filter-category={(cat) => setFilteredCategory(cat)}
+/>
 
+<div class="main-container">
   {#if loading}
     <p>Loading results...</p>
   {:else}
-    <Filter
-      {categories}
-      on:filter-text={(txt) => setFilteredText(txt)}
-      on:filter-category={(cat) => setFilteredCategory(cat)}
-    />
     <ResultTable data={shownItems} />
     <PaginationControls
       {curPage}
@@ -90,19 +89,7 @@ function setFilteredCategory(cat) {
 <style>
 .main-container {
   max-width: 80rem;
-  padding: 0 1rem;
+  padding: 1rem 1rem;
   margin: 1rem auto;
-}
-
-.main-heading {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 500px) {
-  .main-heading {
-    text-align: center;
-  }
 }
 </style>
