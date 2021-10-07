@@ -11,11 +11,11 @@ export let data = []
     </tr>
   </thead>
   <tbody>
-    {#each data as row}
+    {#each data as { entry, definition, category }}
       <tr>
-        <td>{@html row.entry}</td>
-        <td>{row.definition}</td>
-        <td>{row.category}</td>
+        <td>{@html entry}</td>
+        <td>{definition}</td>
+        <td>{category}</td>
       </tr>
     {/each}
   </tbody>
