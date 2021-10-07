@@ -46,4 +46,11 @@ tbody tr {
 tbody tr:hover {
   background-color: rgb(250, 250, 250);
 }
+
+@media (max-width: 500px) {
+  th,
+  td {
+    padding: 0.5rem;
+  }
+}
 </style>

@@ -2,6 +2,7 @@
 import FilterHeader from '$lib/components/FilterHeader.svelte'
 import PaginationControls from '$lib/components/PaginationControls.svelte'
 import ResultTable from '$lib/components/ResultTable.svelte'
+import { fade } from 'svelte/transition'
 import { getSheetEntries } from '$lib/functions/getSheetEntries'
 import { onMount } from 'svelte'
 
@@ -73,20 +74,25 @@ function setFilteredCategory(cat) {
   on:filter-category={(cat) => setFilteredCategory(cat)}
 />
 
-<div class="main-container">
-  {#if loading}
-    <p>Loading results...</p>
-  {:else}
+{#if loading}
+  <h1 class="text-loading">Loading results...</h1>
+{:else}
+  <div class="main-container" in:fade>
     <ResultTable data={shownItems} />
     <PaginationControls
       {curPage}
       {totalPages}
       on:change-page={(val) => changePage(val)}
     />
-  {/if}
-</div>
+  </div>
+{/if}
 
 <style>
+.text-loading {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 .main-container {
   max-width: 80rem;
   padding: 1rem 1rem;

@@ -84,10 +84,6 @@ select {
   color: white;
 }
 
-label {
-  color: white;
-}
-
 @media (max-width: 500px) {
   .main-heading {
     text-align: center;
@@ -96,6 +92,7 @@ label {
 
 label {
   display: block;
+  color: white;
 }
 
 .filter-section {
@@ -128,6 +125,7 @@ select {
     margin-left: 0;
     margin-top: 1rem;
     flex-grow: 1;
+    width: 100%;
   }
 
   select {
