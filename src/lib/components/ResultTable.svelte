@@ -39,6 +39,10 @@ td {
   border-bottom: 1px solid rgb(230, 230, 230);
 }
 
+tbody tr {
+  transition: background-color 0.3s;
+}
+
 tbody tr:hover {
   background-color: rgb(250, 250, 250);
 }

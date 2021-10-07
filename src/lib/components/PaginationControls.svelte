@@ -26,33 +26,30 @@ function onChangePage(val) {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 1rem;
   margin-top: 1.5rem;
   font-weight: bold;
-}
-
-.page-display {
-  margin-right: 1rem;
 }
 
 button {
   padding: 0.75rem 1rem;
   width: 8rem;
   color: white;
-  background-color: rgb(104, 48, 145);
-  border: 1px solid rgb(104, 48, 145);
+  background-color: rgb(92, 79, 175);
+  transition: background-color 0.3s;
+  border: 1px solid transparent;
   border-radius: 5px;
 }
 
 button:hover {
-  background-color: rgb(68, 23, 100);
+  background-color: rgb(75, 65, 143);
 }
 
-button:last-of-type {
-  margin-left: 1rem;
+button:active {
+  background-color: rgb(53, 45, 105);
 }
 
 button:disabled {
   background-color: rgb(168, 168, 168);
-  border: 1px solid rgb(168, 168, 168);
 }
 </style>

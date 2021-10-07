@@ -60,7 +60,7 @@ function onSelectChange(e) {
 header {
   width: 100%;
   top: 0;
-  background-color: darkslateblue;
+  background-color: rgb(72, 61, 139);
   box-shadow: 0px 2px 8px 3px rgba(0, 0, 0, 0.18);
 }
 
