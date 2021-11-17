@@ -17,10 +17,9 @@ export default function ResultItem({
   )
 }
 
-const DefinitionText = styled.p`
-  margin: 0;
-  font-size: 0.875rem;
-  color: #5f5f5f;
+const ItemWrapper = styled.li`
+  padding: 1rem 0;
+  border-bottom: 1px solid #eaeaea;
 `
 
 const TopRow = styled.div`
@@ -28,6 +27,12 @@ const TopRow = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.75rem;
+`
+
+const DefinitionText = styled.p`
+  margin: 0;
+  font-size: 0.875rem;
+  color: #5f5f5f;
 `
 
 const ChineseText = styled.span`
@@ -38,11 +43,6 @@ const ChineseText = styled.span`
 const RomanisationText = styled.span`
   color: #c43c3c;
   font-size: 0.9rem;
-`
-
-const ItemWrapper = styled.li`
-  padding: 1rem 0;
-  border-bottom: 1px solid #eaeaea;
 `
 
 const Category = styled.div`

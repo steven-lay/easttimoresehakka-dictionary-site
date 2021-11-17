@@ -50,14 +50,14 @@ export default function ResultsList({ results }) {
   )
 }
 
-const ResultsArea = styled.ul`
-  list-style: none;
-  padding-left: 0;
-`
-
 const ListContainer = styled.div`
   width: 30rem;
   margin: 2rem auto;
+`
+
+const ResultsArea = styled.ul`
+  list-style: none;
+  padding-left: 0;
 `
 
 const ListText = styled.h1`

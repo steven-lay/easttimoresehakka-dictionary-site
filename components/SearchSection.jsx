@@ -18,8 +18,18 @@ export default function SearchSection({ onSearch }) {
   )
 }
 
+const SectionContainer = styled.div`
+  background-color: rgb(252, 252, 252);
+  height: 10rem;
+`
+
+const InnerContainer = styled.div`
+  margin: 0 auto;
+  max-width: 30rem;
+`
+
 const SearchInput = styled(DebounceInput)`
-  width: 100%;
+  width: 95%;
   padding: 0.75rem;
   outline: none;
   border: 1px solid gray;
@@ -32,18 +42,8 @@ const SearchInput = styled(DebounceInput)`
   }
 `
 
-const SectionContainer = styled.div`
-  background-color: rgb(252, 252, 252);
-  height: 10rem;
-`
-
 const SearchTitle = styled.h1`
   margin: 0;
   padding: 1.5rem 0;
   font-weight: 400;
-`
-
-const InnerContainer = styled.div`
-  margin: 0 auto;
-  max-width: 30rem;
 `
