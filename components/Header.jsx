@@ -13,6 +13,9 @@ export default function Header() {
           <Link href="/">
             <StyledLink>Dictionary</StyledLink>
           </Link>
+          <Link href="/pronunciation">
+            <StyledLink>Pronunciation</StyledLink>
+          </Link>
         </ContentArea>
       </HeaderContainer>
     </HeaderWrapper>
