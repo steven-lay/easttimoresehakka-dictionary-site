@@ -5,29 +5,31 @@ import ResultsList from '../components/ResultsList'
 export default function Home({ result: data }) {
   const [filteredData, setfilteredData] = useState([])
 
-  function filterFunc(a, b, searchTerm) {
-    if (
-      a.definition.toLowerCase().indexOf(searchTerm[0].toLowerCase()) >
-      b.definition.toLowerCase().indexOf(searchTerm[0].toLowerCase())
-    ) {
-      return 1
-    }
-    return -1
-  }
-
   function onSearch(val) {
     if (!val.length) {
       setfilteredData([])
       return
     }
 
-    const re = new RegExp(`\\b${val.toLowerCase()}`, 'g')
     setfilteredData(
       data
-        .filter(entry => entry.definition.toLowerCase().match(re))
-        .sort((a, b) => filterFunc(a, b, val))
+        .filter(entry =>
+          entry.definition
+            .toLowerCase()
+            .match(new RegExp(`\\b${val.toLowerCase()}`, 'g'))
+        )
+        .sort((a, b) => {
+          if (
+            a.definition.toLowerCase().indexOf(val.toLowerCase()) >
+            b.definition.toLowerCase().indexOf(val.toLowerCase())
+          ) {
+            return 1
+          }
+          return -1
+        })
     )
   }
+
   return (
     <>
       <SearchSection onSearch={onSearch} />
