@@ -25,11 +25,12 @@ const SectionContainer = styled.div`
 
 const InnerContainer = styled.div`
   margin: 0 auto;
+  padding: 0 1rem;
   max-width: 30rem;
 `
 
 const SearchInput = styled(DebounceInput)`
-  width: 95%;
+  width: 92%;
   padding: 0.75rem;
   outline: none;
   border: 1px solid gray;

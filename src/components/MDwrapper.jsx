@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const MDwrapper = styled.article`
-  width: 60rem;
+  max-width: 60rem;
+  padding: 0 1rem;
   margin: 0 auto;
   font-size: 115%;
 
@@ -27,7 +28,11 @@ export const MDwrapper = styled.article`
   }
 
   li {
-    line-height: 2;
+    line-height: 1.75;
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 0.75rem;
   }
 
   strong {

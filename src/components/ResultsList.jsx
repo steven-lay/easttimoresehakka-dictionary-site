@@ -50,7 +50,8 @@ export default function ResultsList({ results }) {
 }
 
 const ListContainer = styled.div`
-  width: 30rem;
+  max-width: 30rem;
+  padding: 0 1rem;
   margin: 2rem auto;
 `
 

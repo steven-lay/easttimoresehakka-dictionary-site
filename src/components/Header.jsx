@@ -5,18 +5,18 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <HeaderContainer>
-        <ContentArea>
+        <ContentLeft>
           <FlagImg src="/images/flag-round-250.png" alt="Flag" />
           <FlagText>East Timorese Hakka</FlagText>
-        </ContentArea>
-        <ContentArea>
+        </ContentLeft>
+        <ContentRight>
           <Link href="/">
             <StyledLink>Dictionary</StyledLink>
           </Link>
           <Link href="/pronunciation">
             <StyledLink>Pronunciation</StyledLink>
           </Link>
-        </ContentArea>
+        </ContentRight>
       </HeaderContainer>
     </HeaderWrapper>
   )
@@ -35,14 +35,21 @@ const HeaderContainer = styled.div`
   max-width: 60rem;
   height: 5rem;
   margin: 0 auto;
+  padding: 0 1rem;
   max-width: 60rem;
   color: white;
 `
 
-const ContentArea = styled.div`
+const ContentLeft = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+`
+
+const ContentRight = styled(ContentLeft)`
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const FlagImg = styled.img`
