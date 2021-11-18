@@ -1,4 +1,5 @@
 import remarkGfm from 'remark-gfm'
+import supersub from 'remark-supersub'
 
 export default {
   reactStrictMode: true,
@@ -12,7 +13,7 @@ export default {
           loader: '@mdx-js/loader',
           /** @type {import('@mdx-js/loader').Options} */
           options: {
-            remarkPlugins: [remarkGfm],
+            remarkPlugins: [remarkGfm, supersub],
           },
         },
       ],

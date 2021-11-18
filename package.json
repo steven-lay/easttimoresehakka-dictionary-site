@@ -16,7 +16,7 @@
     "react-icons": "^4.3.1",
     "react-paginate": "^8.0.0",
     "remark-gfm": "^3.0.1",
-    "remark-sub-super": "^1.0.20",
+    "remark-supersub": "^1.0.0",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
