@@ -1,11 +1,8 @@
 /* eslint-disable react/no-danger */
-import styled from 'styled-components'
-
-function numToSuperScript(inputStr) {
-  return inputStr.replace(/([0-9])/g, '<sup>$&</sup>')
-}
-
 /* eslint-disable camelcase */
+import styled from 'styled-components'
+import { numToSuper } from '../lib/utils'
+
 export default function PhonoTable({ data, colTitles }) {
   return (
     <TableWrapper>
@@ -26,7 +23,7 @@ export default function PhonoTable({ data, colTitles }) {
                 {item.example_chinese}{' '}
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: numToSuperScript(item.example_romanisation),
+                    __html: numToSuper(item.example_romanisation),
                   }}
                 />{' '}
                 ({item.example_english})
