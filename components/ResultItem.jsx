@@ -1,14 +1,27 @@
 import styled from 'styled-components'
 
+const convert = {
+  1: `<sup>1</sup>`,
+  2: `<sup>2</sup>`,
+  3: `<sup>3</sup>`,
+  4: `<sup>4</sup>`,
+  5: `<sup>5</sup>`,
+  6: `<sup>6</sup>`,
+}
+
 export default function ResultItem({
   result: { chinese, romanisation, category, definition },
 }) {
+  const convertedRom = romanisation.replace(/[0-9]/g, m => convert[m])
+
   return (
     <ItemWrapper>
       <TopRow>
         <div>
           <ChineseText>{chinese}</ChineseText>{' '}
-          <RomanisationText>{romanisation}</RomanisationText>
+          <RomanisationText
+            dangerouslySetInnerHTML={{ __html: convertedRom }}
+          />
         </div>
         <Category>{category}</Category>
       </TopRow>
