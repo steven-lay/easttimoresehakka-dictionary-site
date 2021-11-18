@@ -31,10 +31,9 @@ export default function ResultsList({ results }) {
         {results.length} {resultText} found
       </ListText>
       <ResultsArea>
-        {!!pagedResults.length &&
-          pagedResults.map(result => (
-            <ResultItem key={JSON.stringify(result)} result={result} />
-          ))}
+        {pagedResults.map(result => (
+          <ResultItem key={JSON.stringify(result)} result={result} />
+        ))}
       </ResultsArea>
 
       <ReactPaginate
