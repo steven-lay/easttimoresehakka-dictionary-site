@@ -1,11 +1,20 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
+import { BiMenu } from 'react-icons/bi'
 
 export default function Header() {
+  const [showSidenav, setShowSidenav] = useState(false)
+
+  function toggleSidenav() {
+    setShowSidenav(!showSidenav)
+  }
+
   return (
     <HeaderWrapper>
       <HeaderContainer>
         <ContentLeft>
+          <Burger onClick={toggleSidenav} />
           <FlagImg src="/images/flag-round-250.png" alt="Flag" />
           <FlagText>East Timorese Hakka</FlagText>
         </ContentLeft>
@@ -38,6 +47,16 @@ const HeaderContainer = styled.div`
   padding: 0 1rem;
   max-width: 60rem;
   color: white;
+`
+
+const Burger = styled(BiMenu)`
+  width: 2em;
+  height: 3em;
+  margin-right: 0.5rem;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `
 
 const ContentLeft = styled.div`
