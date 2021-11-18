@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
-import Layout from '../components/Layout'
+import Header from '../components/Header'
 
 import '../styles/pagination.css'
 
@@ -20,12 +20,13 @@ const GlobalStyles = createGlobalStyle`
 
 export default function App({ Component, pageProps }) {
   return (
-    <Layout>
+    <>
       <Head>
         <title>East Timorese Hakka</title>
       </Head>
       <GlobalStyles />
+      <Header />
       <Component {...pageProps} />
-    </Layout>
+    </>
   )
 }
