@@ -4,34 +4,32 @@ import ReactPaginate from 'react-paginate'
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa'
 import ResultItem from './ResultItem'
 
-const entriesPerPage = 5
+const resultsPerPage = 5
 
 export default function ResultsList({ results }) {
-  const [page, setPage] = useState(1)
+  const [currentResults, setCurrentResults] = useState(null)
+  const [pageCount, setPageCount] = useState(0)
+  const [resultOffset, setResultOffset] = useState(0)
 
   useEffect(() => {
-    setPage(1)
+    setPageCount(Math.ceil(results.length / resultsPerPage))
   }, [results])
 
-  const resultText = results.length === 1 ? 'result' : 'results'
+  useEffect(() => {
+    const endOffset = resultOffset + resultsPerPage
+    setCurrentResults(results.slice(resultOffset, endOffset))
+  }, [resultOffset, results])
 
-  const totalPages = Math.ceil(results.length / entriesPerPage)
-
-  const start = (page - 1) * entriesPerPage
-  const end = page * entriesPerPage
-  const pagedResults = results.slice(start, end)
-
-  function handlePageClick(e) {
-    setPage(e.selected + 1)
+  function handlePageClick(event) {
+    const newOffset = (event.selected * resultsPerPage) % results.length
+    setResultOffset(newOffset)
   }
 
   return (
     <ListContainer>
-      <ListText>
-        {results.length} {resultText} found
-      </ListText>
+      <ListText>Results: {currentResults?.length || 0} found</ListText>
       <ResultsArea>
-        {pagedResults.map(result => (
+        {currentResults?.map(result => (
           <ResultItem key={JSON.stringify(result)} result={result} />
         ))}
       </ResultsArea>
@@ -40,7 +38,7 @@ export default function ResultsList({ results }) {
         breakLabel="..."
         nextLabel={<FaAngleDoubleRight />}
         onPageChange={handlePageClick}
-        pageCount={totalPages}
+        pageCount={pageCount}
         previousLabel={<FaAngleDoubleLeft />}
         renderOnZeroPageCount={null}
         containerClassName="pagination"
