@@ -1,4 +1,7 @@
 import { MDwrapper } from '../components/MDwrapper';
+import finals from '../data/finals.json'
+import initials from '../data/initials.json'
+import PhonoTable from '../components/PhonoTable.jsx'
 
 export default function Layout({children}) {
   return <MDwrapper>{children}</MDwrapper>;
@@ -68,14 +71,11 @@ the initials and finals in East Timorese Hakka.
 
 ## Table of initials
 
-
+<PhonoTable colTitles={['Initial', 'IPA', 'Example', 'Comments']} data={initials}/>
 
 ## Table of finals
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+<PhonoTable colTitles={['Final', 'IPA', 'Example', 'Comments']} data={finals}/>
 
 ### Notes
 
