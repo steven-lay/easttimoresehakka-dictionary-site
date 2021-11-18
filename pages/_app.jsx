@@ -4,7 +4,12 @@ import Layout from '../components/Layout'
 
 import '../styles/pagination.css'
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
+  html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+  }
+
   body {
     margin: 0;
     padding: 0;
@@ -19,7 +24,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>East Timorese Hakka</title>
       </Head>
-      <GlobalStyle />
+      <GlobalStyles />
       <Component {...pageProps} />
     </Layout>
   )
