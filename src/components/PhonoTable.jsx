@@ -1,7 +1,7 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable camelcase */
 import styled from 'styled-components'
-import { numToSuper } from '../lib/utils'
+import ToSuper from './ToSuper'
 
 export default function PhonoTable({ data, colTitles }) {
   return (
@@ -21,12 +21,8 @@ export default function PhonoTable({ data, colTitles }) {
               <td>{item.IPA}</td>
               <ClickableCell>
                 {item.example_chinese}{' '}
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: numToSuper(item.example_romanisation),
-                  }}
-                />{' '}
-                ({item.example_english})
+                <ToSuper inputTxt={item.example_romanisation} /> (
+                {item.example_english})
               </ClickableCell>
               <td>{item.comments}</td>
             </tr>
