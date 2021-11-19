@@ -32,8 +32,11 @@ export default function Header() {
 }
 
 const HeaderWrapper = styled.header`
+  position: sticky;
+  top: 0;
   width: 100%;
   background-color: black;
+  box-shadow: 0 0 6px;
 `
 
 const HeaderContainer = styled.div`
@@ -42,17 +45,21 @@ const HeaderContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   max-width: 60rem;
-  height: 5rem;
+  height: 3.75rem;
   margin: 0 auto;
   padding: 0 1rem;
   max-width: 60rem;
   color: white;
+
+  @media (min-width: 768px) {
+    height: 5rem;
+  }
 `
 
 const Burger = styled(BiMenu)`
   width: 2em;
   height: 3em;
-  margin-right: 0.5rem;
+  margin-right: 0.375rem;
 
   @media (min-width: 768px) {
     display: none;
@@ -66,18 +73,28 @@ const ContentLeft = styled.div`
 `
 
 const ContentRight = styled(ContentLeft)`
-  @media (max-width: 768px) {
-    display: none;
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
   }
 `
 
 const FlagImg = styled.img`
+  display: none;
   width: 3rem;
+
+  @media (min-width: 768px) {
+    display: inline;
+  }
 `
 
 const FlagText = styled.span`
   font-size: 1.2rem;
-  width: 10rem;
+
+  @media (min-width: 768px) {
+    width: 10rem;
+  }
 `
 
 const StyledLink = styled.a`
