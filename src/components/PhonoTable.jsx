@@ -1,14 +1,18 @@
-/* eslint-disable react/no-danger */
 /* eslint-disable camelcase */
 import styled from 'styled-components'
 import ToSuper from './ToSuper'
+import { playAudio } from '../lib/utils'
 
-export default function PhonoTable({ data, colTitles }) {
+export default function PhonoTable({ data, colTitles, audioPath }) {
+  function handlePlayAudio(name) {
+    playAudio(`/audio/${audioPath}/${name}.mp3`)
+  }
+
   const tableBodyContent = data.map(item => (
     <tr key={item.entry}>
       <td>{item.entry}</td>
       <td>{item.IPA}</td>
-      <ClickableCell>
+      <ClickableCell onClick={() => handlePlayAudio(item.example_romanisation)}>
         {item.example_chinese} <ToSuper inputTxt={item.example_romanisation} />{' '}
         ({item.example_english})
       </ClickableCell>
