@@ -34,18 +34,39 @@ export default function ResultsList({ results }) {
         ))}
       </ResultsArea>
 
-      <ReactPaginate
+      <StyledReactPagination
         breakLabel="..."
         nextLabel={<FaAngleDoubleRight />}
         onPageChange={handlePageClick}
         pageCount={pageCount}
         previousLabel={<FaAngleDoubleLeft />}
         renderOnZeroPageCount={null}
-        containerClassName="pagination"
       />
     </ListContainer>
   )
 }
+
+const StyledReactPagination = styled(ReactPaginate)`
+  display: flex;
+  padding-left: 0;
+  justify-content: center;
+  user-select: none;
+
+  li {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  li.selected {
+    border-radius: 35px;
+    background-color: #f5f5f5;
+  }
+
+  li > a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+  }
+`
 
 const ListContainer = styled.div`
   max-width: 30rem;

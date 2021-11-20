@@ -2,8 +2,6 @@ import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 import Header from '../components/Header'
 
-import '../styles/pagination.css'
-
 const GlobalStyles = createGlobalStyle`
   html {
     overflow-x: hidden;
