@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { BiMenu } from 'react-icons/bi'
+import DocsDropdown from './DocsDropdown'
 
 export default function Header() {
   const [showSidenav, setShowSidenav] = useState(false)
@@ -22,9 +23,7 @@ export default function Header() {
           <Link href="/">
             <StyledLink>Dictionary</StyledLink>
           </Link>
-          <Link href="/pronunciation">
-            <StyledLink>Pronunciation</StyledLink>
-          </Link>
+          <DocsDropdown />
         </ContentRight>
       </HeaderContainer>
     </HeaderWrapper>
