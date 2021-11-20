@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 import Header from '../components/Header'
+import ScrollToTop from '../components/ScrollToTop'
 
 const GlobalStyles = createGlobalStyle`
   html {
@@ -25,6 +26,7 @@ export default function App({ Component, pageProps }) {
       <GlobalStyles />
       <Header />
       <Component {...pageProps} />
+      <ScrollToTop />
     </>
   )
 }
