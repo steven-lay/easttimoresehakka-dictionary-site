@@ -6,6 +6,9 @@ import rehypeSlug from 'rehype-slug'
 export default {
   reactStrictMode: true,
   pageExtensions: ['md', 'mdx', 'tsx', 'ts', 'jsx', 'js'],
+  experimental: {
+    styledComponents: true,
+  },
   webpack(config, options) {
     config.module.rules.push({
       test: /\.mdx?$/,
