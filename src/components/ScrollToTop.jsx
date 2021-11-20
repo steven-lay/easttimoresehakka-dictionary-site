@@ -51,4 +51,8 @@ const StyledIcon = styled(BsFillArrowUpCircleFill)`
   height: 3em;
   width: 3em;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
