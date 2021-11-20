@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const MDwrapper = styled.article`
   max-width: 60rem;
-  padding: 0 1rem;
+  padding: 0 1rem 2rem 1rem;
   margin: 0 auto;
   font-size: 115%;
 
@@ -41,7 +41,7 @@ export const MDwrapper = styled.article`
   }
 
   li:not(:last-child) {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   strong {
@@ -51,6 +51,7 @@ export const MDwrapper = styled.article`
   table {
     border-collapse: collapse;
     width: 100%;
+    margin: 2rem 0;
   }
 
   th {
@@ -74,5 +75,9 @@ export const MDwrapper = styled.article`
     & > li > a {
       color: #ad3232;
     }
+  }
+
+  a {
+    color: #ad3232;
   }
 `
