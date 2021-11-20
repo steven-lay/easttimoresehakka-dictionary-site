@@ -7,9 +7,13 @@ export const MDwrapper = styled.article`
   font-size: 115%;
 
   h1 {
-    margin-top: 3rem;
+    margin-top: 2rem;
     font-size: 2.5rem;
     font-weight: 600;
+
+    @media (min-width: 768px) {
+      margin-top: 3rem;
+    }
   }
 
   h2,
