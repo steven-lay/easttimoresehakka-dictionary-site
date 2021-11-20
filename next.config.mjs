@@ -1,5 +1,7 @@
 import remarkGfm from 'remark-gfm'
-import supersub from 'remark-supersub'
+import remarkSupersub from 'remark-supersub'
+import remarkToc from 'remark-toc'
+import rehypeSlug from 'rehype-slug'
 
 export default {
   reactStrictMode: true,
@@ -13,7 +15,12 @@ export default {
           loader: '@mdx-js/loader',
           /** @type {import('@mdx-js/loader').Options} */
           options: {
-            remarkPlugins: [remarkGfm, supersub],
+            remarkPlugins: [
+              remarkGfm,
+              [remarkToc, { maxDepth: 2, tight: true, ordered: true }],
+              remarkSupersub,
+            ],
+            rehypePlugins: [rehypeSlug],
           },
         },
       ],

@@ -18,6 +18,15 @@ export const MDwrapper = styled.article`
     font-weight: 500;
   }
 
+  h2::before {
+    display: block;
+    content: ' ';
+    margin-top: -110px;
+    height: 110px;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
   p {
     line-height: 1.75;
   }
@@ -53,5 +62,17 @@ export const MDwrapper = styled.article`
   th {
     border: 1px solid gray;
     padding: 0.75rem 1rem;
+  }
+
+  #table-of-contents + ol {
+    padding-left: 1.5rem;
+
+    & > li {
+      line-height: 1.2;
+    }
+
+    & > li > a {
+      color: #ad3232;
+    }
   }
 `
