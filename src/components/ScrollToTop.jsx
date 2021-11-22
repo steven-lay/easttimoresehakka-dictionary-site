@@ -9,25 +9,26 @@ export default function ScrollToTop() {
 
   const ref = useRef()
 
-  function checkVisibility() {
-    if (window.pageYOffset > 100) {
-      setShowScroll(true)
-    } else {
-      setShowScroll(false)
-    }
-  }
-
-  useEffect(() => {
-    ref.current = document.querySelector('#portal')
-    window.addEventListener('scroll', checkVisibility)
-    setMounted(true)
-
-    return () => window.removeEventListener('scroll', checkVisibility)
-  }, [])
-
   function handleScrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
+
+  useEffect(() => {
+    function checkVisibility() {
+      if (window.pageYOffset > 100) {
+        setShowScroll(true)
+      } else {
+        setShowScroll(false)
+      }
+    }
+
+    setMounted(true)
+
+    ref.current = document.querySelector('#portal')
+    window.addEventListener('scroll', checkVisibility)
+
+    return () => window.removeEventListener('scroll', checkVisibility)
+  }, [])
 
   return mounted
     ? createPortal(
