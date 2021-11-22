@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { DefaultSeo } from 'next-seo'
 import { createGlobalStyle } from 'styled-components'
 import Header from '../components/Header'
 import ScrollToTop from '../components/ScrollToTop'
@@ -22,8 +23,12 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>East Timorese Hakka</title>
       </Head>
+      <DefaultSeo
+        titleTemplate="%s | East Timorese Hakka"
+        defaultTitle="East Timorese Hakka"
+        description="A website dedicated to the East Timorese Hakka language"
+      />
       <GlobalStyles />
       <Header />
       <Component {...pageProps} />

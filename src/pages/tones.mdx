@@ -1,8 +1,14 @@
 import Link from 'next/link'
+import { NextSeo } from 'next-seo'
 import { MDwrapper } from '../components/MDwrapper';
 
 export default function Layout({children}) {
-  return <MDwrapper>{children}</MDwrapper>;
+  return (
+    <MDwrapper>
+      <NextSeo title="Tones" />
+      {children}
+    </MDwrapper>
+  )
 }
 
 # Tones

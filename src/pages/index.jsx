@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { NextSeo } from 'next-seo'
 import SearchSection from '../components/SearchSection'
 import ResultsList from '../components/ResultsList'
 
@@ -32,6 +33,7 @@ export default function Home({ result: data }) {
 
   return (
     <>
+      <NextSeo title="Dictionary" />
       <SearchSection onSearch={onSearch} />
       <ResultsList results={filteredData} />
     </>
