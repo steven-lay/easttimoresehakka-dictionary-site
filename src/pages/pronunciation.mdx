@@ -1,14 +1,12 @@
 import Link from 'next/link'
-import { NextSeo } from 'next-seo'
-import { MDwrapper } from '../components/MDwrapper';
+import MDwrapper from '../components/MDwrapper';
 import finals from '../data/finals.json'
 import initials from '../data/initials.json'
 import PhonoTable from '../components/PhonoTable.jsx'
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
-    <MDwrapper>
-      <NextSeo title="Pronunciation" />
+    <MDwrapper seoTitle="Pronunciation">
       {children}
     </MDwrapper>
   )

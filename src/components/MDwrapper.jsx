@@ -1,6 +1,16 @@
+import { NextSeo } from 'next-seo'
 import styled from 'styled-components'
 
-export const MDwrapper = styled.article`
+export default function MDwrapper({ seoTitle, children }) {
+  return (
+    <>
+      <NextSeo title={seoTitle} />
+      <Wrapper>{children}</Wrapper>
+    </>
+  )
+}
+
+const Wrapper = styled.article`
   max-width: 60rem;
   padding: 0 1rem 2rem 1rem;
   margin: 0 auto;

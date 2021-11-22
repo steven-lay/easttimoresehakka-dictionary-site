@@ -1,11 +1,9 @@
 import Link from 'next/link'
-import { NextSeo } from 'next-seo'
-import { MDwrapper } from '../components/MDwrapper';
+import MDwrapper from '../components/MDwrapper';
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
-    <MDwrapper>
-      <NextSeo title="Tones" />
+    <MDwrapper seoTitle="Tones">
       {children}
     </MDwrapper>
   )
