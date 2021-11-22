@@ -6,8 +6,8 @@ import ResultsList from '../components/ResultsList'
 export default function Home({ result: data }) {
   const [filteredData, setfilteredData] = useState([])
 
-  function onSearch(val) {
-    if (!val.length) {
+  function onSearch(searchTerm) {
+    if (!searchTerm.length) {
       setfilteredData([])
       return
     }
@@ -17,12 +17,12 @@ export default function Home({ result: data }) {
         .filter(entry =>
           entry.definition
             .toLowerCase()
-            .match(new RegExp(`\\b${val.toLowerCase()}`, 'g'))
+            .match(new RegExp(`\\b${searchTerm.toLowerCase()}`, 'g'))
         )
         .sort((a, b) => {
           if (
-            a.definition.toLowerCase().indexOf(val.toLowerCase()) >
-            b.definition.toLowerCase().indexOf(val.toLowerCase())
+            a.definition.toLowerCase().indexOf(searchTerm.toLowerCase()) >
+            b.definition.toLowerCase().indexOf(searchTerm.toLowerCase())
           ) {
             return 1
           }
