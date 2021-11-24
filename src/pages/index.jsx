@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NextSeo } from 'next-seo'
+import { matchSorter } from 'match-sorter'
 import SearchSection from '../components/SearchSection'
 import ResultsList from '../components/ResultsList'
 
@@ -12,23 +13,12 @@ export default function Home({ result: data }) {
       return
     }
 
-    setfilteredData(
-      data
-        .filter(entry =>
-          entry.definition
-            .toLowerCase()
-            .match(new RegExp(`\\b${searchTerm.toLowerCase()}`, 'g'))
-        )
-        .sort((a, b) => {
-          if (
-            a.definition.toLowerCase().indexOf(searchTerm.toLowerCase()) >
-            b.definition.toLowerCase().indexOf(searchTerm.toLowerCase())
-          ) {
-            return 1
-          }
-          return -1
-        })
-    )
+    const filtered = matchSorter(data, searchTerm, {
+      keys: ['definition'],
+      threshold: matchSorter.rankings.WORD_STARTS_WITH,
+    })
+
+    setfilteredData(filtered)
   }
 
   return (
