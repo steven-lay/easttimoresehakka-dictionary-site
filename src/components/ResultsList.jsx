@@ -27,7 +27,7 @@ export default function ResultsList({ results }) {
 
   return (
     <ListContainer>
-      <ListText>Results: {currentResults?.length || 0} found</ListText>
+      <ListText>Results: {results?.length || 0} found</ListText>
       <ResultsArea>
         {currentResults?.map(result => (
           <ResultItem key={JSON.stringify(result)} result={result} />
