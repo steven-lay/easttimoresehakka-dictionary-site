@@ -16,7 +16,9 @@ export default function Header() {
       <HeaderContainer>
         <ContentLeft>
           <Burger onClick={toggleSidenav} />
-          <FlagImg src="/images/flag-round-250.png" alt="Flag" />
+          <FlagLink href="/">
+            <FlagImg src="/images/flag-round-250.png" alt="Flag" />
+          </FlagLink>
           <FlagText>East Timorese Hakka</FlagText>
         </ContentLeft>
         <ContentRight>
@@ -79,9 +81,12 @@ const ContentRight = styled(ContentLeft)`
   }
 `
 
+const FlagLink = styled(Link)``
+
 const FlagImg = styled.img`
   display: none;
   width: 3rem;
+  cursor: pointer;
 
   @media (min-width: 768px) {
     display: inline;
