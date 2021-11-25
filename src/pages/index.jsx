@@ -6,10 +6,12 @@ import ResultsList from '../components/ResultsList'
 
 export default function Home({ result: data }) {
   const [filteredData, setfilteredData] = useState([])
+  const [showResults, setShowResults] = useState(false)
 
   function onSearch(searchTerm) {
     if (!searchTerm.length) {
       setfilteredData([])
+      setShowResults(false)
       return
     }
 
@@ -19,13 +21,14 @@ export default function Home({ result: data }) {
     })
 
     setfilteredData(filtered)
+    setShowResults(true)
   }
 
   return (
     <>
       <NextSeo title="Dictionary" />
       <SearchSection onSearch={onSearch} />
-      <ResultsList results={filteredData} />
+      {showResults && <ResultsList results={filteredData} />}
     </>
   )
 }
