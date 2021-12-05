@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import { createGlobalStyle } from 'styled-components'
-import Header from '../components/Header'
-import ScrollToTop from '../components/ScrollToTop'
+import Header from '~/components/Header'
+import ScrollToTop from '~/components/ScrollToTop'
 
 const GlobalStyles = createGlobalStyle`
   html {

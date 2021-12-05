@@ -2,7 +2,7 @@
 import { AiFillSound } from 'react-icons/ai'
 import styled from 'styled-components'
 import ToSuper from './ToSuper'
-import { playAudio } from '../lib/utils'
+import { playAudio } from '~/lib/utils'
 
 export default function PhonoTable({ data, colTitles, audioPath }) {
   function handlePlayAudio(name) {

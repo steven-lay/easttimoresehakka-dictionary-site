@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { NextSeo } from 'next-seo'
 import { matchSorter } from 'match-sorter'
-import SearchSection from '../components/SearchSection'
-import ResultsList from '../components/ResultsList'
+import ResultsList from '~/components/ResultsList'
+import SearchSection from '~/components/SearchSection'
 
 export default function Home({ result: data }) {
   const [filteredData, setfilteredData] = useState([])
