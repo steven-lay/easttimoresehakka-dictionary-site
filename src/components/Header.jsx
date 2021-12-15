@@ -26,6 +26,9 @@ export default function Header() {
             <StyledLink>Dictionary</StyledLink>
           </Link>
           <DocsDropdown />
+          <Link href="/resources">
+            <StyledLink>Resources</StyledLink>
+          </Link>
         </ContentRight>
       </HeaderContainer>
     </HeaderWrapper>

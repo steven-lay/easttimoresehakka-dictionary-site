@@ -102,7 +102,7 @@
       "entry":"ng",
       "IPA":"[ŋ]",
       "Example":"硬 ngang4 (hard)",
-      "comments":"Like the ng at the end of the word sing.",
+      "comments":"Like the \"ng\" at the end of the word sing.",
       "example_chinese":"硬",
       "example_romanisation":"ngang4",
       "example_english":"hard"
@@ -129,7 +129,7 @@
       "entry":"q",
       "IPA":"[ʨʰ]",
       "Example":"七 qit5 (seven)",
-      "comments":"",
+      "comments":"Like the \"ch\" in cheese.",
       "example_chinese":"七",
       "example_romanisation":"qit5",
       "example_english":"seven"
@@ -138,7 +138,7 @@
       "entry":"x",
       "IPA":"[ɕ]",
       "Example":"香 xiong1 (fragrant)",
-      "comments":"Like the sh in sheep.",
+      "comments":"Like the \"sh\" in sheep.",
       "example_chinese":"香",
       "example_romanisation":"xiong1",
       "example_english":"fragrant"
@@ -147,7 +147,7 @@
       "entry":"z",
       "IPA":"[ʦ]",
       "Example":"轉 zon3 (to return)",
-      "comments":"",
+      "comments":"Similar to \"ds\" in suds",
       "example_chinese":"轉",
       "example_romanisation":"zon3",
       "example_english":"to return"
@@ -156,7 +156,7 @@
       "entry":"c",
       "IPA":"[ʦʰ]",
       "Example":"坐 co1 (to sit)",
-      "comments":"",
+      "comments":"Like the \"ts\" in cats.",
       "example_chinese":"坐",
       "example_romanisation":"co1",
       "example_english":"to sit"
@@ -174,7 +174,7 @@
       "entry":"",
       "IPA":"[Ø]",
       "Example":"一 yit5 (one)",
-      "comments":"Null initial, see notes below.",
+      "comments":"Null initial.",
       "example_chinese":"一",
       "example_romanisation":"yit5",
       "example_english":"one"

@@ -2,6 +2,7 @@ import remarkGfm from 'remark-gfm'
 import remarkSupersub from 'remark-supersub'
 import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
+import rehypeExternalLinks from 'rehype-external-links'
 
 export default {
   reactStrictMode: true,
@@ -23,7 +24,13 @@ export default {
               [remarkToc, { maxDepth: 2, tight: true, ordered: true }],
               remarkSupersub,
             ],
-            rehypePlugins: [rehypeSlug],
+            rehypePlugins: [
+              rehypeSlug,
+              [
+                rehypeExternalLinks,
+                { target: '_blank', rel: ['noopener noreferrer'] },
+              ],
+            ],
           },
         },
       ],
