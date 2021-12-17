@@ -93,7 +93,7 @@
       "entry":"k",
       "IPA":"[kʰ]",
       "Example":"開 koi1 (to open)",
-      "comments":"",
+      "comments":"Like the \"k\" in kiss",
       "example_chinese":"開",
       "example_romanisation":"koi1",
       "example_english":"to open"
@@ -102,10 +102,19 @@
       "entry":"ng",
       "IPA":"[ŋ]",
       "Example":"硬 ngang4 (hard)",
-      "comments":"Like the \"ng\" at the end of the word sing.",
+      "comments":"Like the \"ng\" at the end of the word sing",
       "example_chinese":"硬",
       "example_romanisation":"ngang4",
       "example_english":"hard"
+   },
+   {
+      "entry":"ny",
+      "IPA":"[ɲ]",
+      "Example":"你 nyi2 (you)",
+      "comments":"",
+      "example_chinese":"你",
+      "example_romanisation":"nyi2",
+      "example_english":"you"
    },
    {
       "entry":"h",
@@ -120,7 +129,7 @@
       "entry":"j",
       "IPA":"[ʨ]",
       "Example":"剪 jen3 (to cut)",
-      "comments":"",
+      "comments":"Somewhat similar to \"j\" in Jennifer",
       "example_chinese":"剪",
       "example_romanisation":"jen3",
       "example_english":"to cut"
@@ -129,7 +138,7 @@
       "entry":"q",
       "IPA":"[ʨʰ]",
       "Example":"七 qit5 (seven)",
-      "comments":"Like the \"ch\" in cheese.",
+      "comments":"Like the \"ch\" in cheese",
       "example_chinese":"七",
       "example_romanisation":"qit5",
       "example_english":"seven"
@@ -138,7 +147,7 @@
       "entry":"x",
       "IPA":"[ɕ]",
       "Example":"香 xiong1 (fragrant)",
-      "comments":"Like the \"sh\" in sheep.",
+      "comments":"Like the \"sh\" in sheep",
       "example_chinese":"香",
       "example_romanisation":"xiong1",
       "example_english":"fragrant"
@@ -156,7 +165,7 @@
       "entry":"c",
       "IPA":"[ʦʰ]",
       "Example":"坐 co1 (to sit)",
-      "comments":"Like the \"ts\" in cats.",
+      "comments":"Like the \"ts\" in cats",
       "example_chinese":"坐",
       "example_romanisation":"co1",
       "example_english":"to sit"
@@ -174,7 +183,7 @@
       "entry":"",
       "IPA":"[Ø]",
       "Example":"一 yit5 (one)",
-      "comments":"Null initial.",
+      "comments":"Null initial",
       "example_chinese":"一",
       "example_romanisation":"yit5",
       "example_english":"one"

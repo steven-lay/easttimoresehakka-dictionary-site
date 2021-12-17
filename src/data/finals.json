@@ -21,7 +21,7 @@
      "example_chinese":"拿",
      "example_romanisation":"na1",
      "example_english":"to take",
-     "comments":""
+     "comments":"Like the \"a\" in par"
   },
   {
      "entry":"ia",
@@ -45,7 +45,7 @@
      "example_chinese":"細",
      "example_romanisation":"se4",
      "example_english":"small",
-     "comments":"\"e\" is pronounced like air"
+     "comments":"Like the \"air\" in hair"
   },
   {
      "entry":"ie",
@@ -259,7 +259,7 @@
      "entry":"ion",
      "IPA":"[iɔn]",
      "example_chinese":"軟",
-     "example_romanisation":"ngion1",
+     "example_romanisation":"nyion1",
      "example_english":"soft",
      "comments":""
   },
@@ -355,7 +355,7 @@
      "entry":"ip",
      "IPA":"[ip]",
      "example_chinese":"入",
-     "example_romanisation":"ngip6",
+     "example_romanisation":"nyip6",
      "example_english":"to enter",
      "comments":""
   },
@@ -411,7 +411,7 @@
      "entry":"iat",
      "IPA":"[iat]",
      "example_chinese":"月",
-     "example_romanisation":"ngiat6",
+     "example_romanisation":"nyiat6",
      "example_english":"moon",
      "comments":""
   },
