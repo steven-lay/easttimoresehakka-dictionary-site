@@ -4,20 +4,17 @@ import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
 import rehypeExternalLinks from 'rehype-external-links'
 
-export default {
+const nextConfig = {
   reactStrictMode: true,
-  pageExtensions: ['md', 'mdx', 'tsx', 'ts', 'jsx', 'js'],
-  experimental: {
-    styledComponents: true,
-  },
-  webpack(config, options) {
+  swcMinify: true,
+  experimental: { esmExternals: true },
+  pageExtensions: ['md', 'mdx', 'jsx', 'js'],
+  webpack: function (config) {
     config.module.rules.push({
       test: /\.mdx?$/,
       use: [
-        options.defaultLoaders.babel,
         {
           loader: '@mdx-js/loader',
-          /** @type {import('@mdx-js/loader').Options} */
           options: {
             remarkPlugins: [
               remarkGfm,
@@ -30,12 +27,13 @@ export default {
                 rehypeExternalLinks,
                 { target: '_blank', rel: ['noopener noreferrer'] },
               ],
-            ],
-          },
-        },
-      ],
+            ]
+          }
+        }
+      ]
     })
-
     return config
-  },
+  }
 }
+
+export default nextConfig
