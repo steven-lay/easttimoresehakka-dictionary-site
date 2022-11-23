@@ -11,10 +11,9 @@ export default function MDwrapper({ seoTitle, children }) {
 }
 
 const Wrapper = styled.article`
-  max-width: 60rem;
+  max-width: 45rem;
   padding: 0 1rem 2rem 1rem;
   margin: 0 auto;
-  font-size: 115%;
 
   h1 {
     margin-top: 2rem;
@@ -22,7 +21,7 @@ const Wrapper = styled.article`
     font-weight: 600;
 
     @media (min-width: 768px) {
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
   }
 
@@ -75,12 +74,12 @@ const Wrapper = styled.article`
 
   td,
   th {
-    border: 1px solid gray;
-    padding: 0.75rem 1rem;
+    border: 1px solid lightgray;
+    padding: 0.75rem;
   }
 
   #table-of-contents + ol {
-    padding-left: 1.5rem;
+    padding-left: 1rem;
 
     & > li {
       line-height: 1.2;

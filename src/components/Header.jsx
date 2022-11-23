@@ -48,15 +48,14 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  max-width: 60rem;
   height: 3.75rem;
   margin: 0 auto;
   padding: 0 1rem;
-  max-width: 60rem;
+  max-width: 45rem;
   color: white;
 
   @media (min-width: 768px) {
-    height: 5rem;
+    height: 4rem;
   }
 `
 
