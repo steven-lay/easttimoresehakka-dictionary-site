@@ -22,7 +22,7 @@ export default function Header() {
           <FlagText>East Timorese Hakka</FlagText>
         </ContentLeft>
         <ContentRight>
-          <Link href="/">
+          <Link href="/dictionary">
             <StyledLink>Dictionary</StyledLink>
           </Link>
           <DocsDropdown />

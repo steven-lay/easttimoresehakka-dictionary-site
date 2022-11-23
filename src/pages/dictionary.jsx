@@ -4,7 +4,7 @@ import { matchSorter } from 'match-sorter'
 import ResultsList from '~/components/ResultsList'
 import SearchSection from '~/components/SearchSection'
 
-export default function Home({ result: data }) {
+export default function Dictionary({ result: data }) {
   const [filteredData, setfilteredData] = useState([])
   const [showResults, setShowResults] = useState(false)
 

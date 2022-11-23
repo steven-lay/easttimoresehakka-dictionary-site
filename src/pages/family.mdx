@@ -1,0 +1,163 @@
+import MDwrapper from '~/components/MDwrapper';
+
+export default function Layout({ children }) {
+  return (
+    <MDwrapper seoTitle="Family Tree">
+      {children}
+    </MDwrapper>
+  )
+}
+
+# Family Tree
+
+## Immediate family - Parents
+
+|      Word       | Chinese | Romanisation |
+|-----------------|-------|--------------|
+|  Parents         |  爺哀   | ya^2^ oi^1^      |
+|  Father (direct)  |  阿爸   | a^1^ ba^1^       |
+|  Father (indirect) |  爺哩   | ya^2^ li^3^      |
+|  Mother (direct)  |   阿姆  | a^1^ me^1^       |
+|  Mother (indirect) |  哀哩   | oi^1^ li^3^      |
+
+## Immediate family - Spouse / Partner
+
+| Word    | Chinese | Romanisation |
+|---------|---------|--------------|
+| Husband | 老公    | lo^3^ gung^1^    |
+| Wife    | 老婆    | lo^3^ po^2^      |
+
+## Immediate Family - Siblings
+
+| Word            | Chinese  | Romanisation        |
+|-----------------|----------|---------------------|
+| Siblings        | 兄弟姊妹 | xiung^1^ ti^4^ ji^3^ moi^4^ |
+| Older Brother   | 阿哥     | a^1^ go^1^              |
+| Younger Brother | 老弟哩   | lo^3^ hai^1^ li^3^        |
+| Older sister    | 大姊     | tai^4^ ji^3^            |
+| Younger sister  | 老妹     | lo^3^ moi^4^            |
+
+## Immediate Family - Children
+
+| Word              | Chinese | Romanisation |
+|-------------------|---------|--------------|
+| Children          | 細𧊅    | se^4^ guai^3^    |
+| Children (formal) | 子女    | ji^3^ m^3^       |
+| Son               | 倈哩    | lai^4^ li^3^     |
+| Daughter          | 妹哩    | moi^4^ li^3^     |
+
+## Family - Grandchildren
+
+| Word                                | Chinese | Romanisation   |
+|-------------------------------------|---------|----------------|
+| Grandchildren (son’s children)      | 孫哩    | sun^1^ ni^3^       |
+| Grandson (son’s son)                | 孫哩    | sun^1^ ni^3^       |
+| Granddaughter (son’s daughter)      | 孫女    | sun^1^ m^3^        |
+| Grandchildren (daughter’s children) | 外孫哩  | ngoi^4^ sun^1^ ni^3^ |
+| Grandson (daughter’s son)           | 外孫哩  | ngoi^4^ sun^1^ ni^3^ |
+| Granddaughter (daughter’s daughter) | 外孫女  | ngoi^4^ sun^1^ m^3^  |
+
+## Family - Grandparents
+
+| Word                 | Chinese | Romanisation   |
+|----------------------|---------|----------------|
+| Paternal Grandfather | 阿公    | a^1^ gung^1^       |
+| Paternal Grandmother | 阿婆    | a^1^ po^2^         |
+| Maternal Grandfather | 外阿公  | ngoi^4^ a^1^ gung^1^ |
+| Maternal Grandmother | 外阿婆  | ngoi^4^ a^1^ po^2^   |
+
+## Family - Nieces and Nephews
+
+| Word               | Chinese | Romanisation   |
+|--------------------|---------|----------------|
+| Brother’s son      | 侄哩    | qit^6^ di^3^       |
+| Brother’s daughter | 侄女    | qit^6^ m^3^        |
+| Sister’s son       | 外甥哩  | ngoi^4^ sen^1^ ni^3^ |
+| Sister’s daughter  | 外甥女  | ngoi^4^ sen^1^ m^3^  |
+
+## Family - Great Grandparents
+
+| Word                       | Chinese | Romanisation |
+|----------------------------|---------|--------------|
+| Paternal Great Grandfather | 公太    | gung^1^ tai^4^   |
+| Paternal Great Grandmother | 婆太    | po^2^ tai^4^     |
+| Maternal Great Grandfather | 阿太    | a^1^ tai^4^      |
+| Maternal Great Grandmother | 阿太    | a^1^ tai^4^      |
+
+## Family - Uncles
+
+| Word                      | Chinese | Romanisation |
+|---------------------------|---------|--------------|
+| Father’s older brother    | 阿伯    | a^1^ bak^^5^^      |
+| Father’s younger brother  | 阿叔    | a^1^ suk^5^      |
+| Father’s sister’s husband | 姑丈    | gu^1^ cong^1^    |
+| Mother’s brother          | 阿舅    | a^1^ kiu^1^      |
+| Mother’s sister’s husband | 姨丈    | yi^2^ cong^2^    |
+
+## Family - Aunties
+
+| Word                            | Chinese | Romanisation |
+|---------------------------------|---------|--------------|
+| Father’s older brother’s wife   | 伯姆    | bak^5^ me^1^     |
+| Father’s younger brother’s wife | 叔姆    | suk^5^ me^1^     |
+| Father’s older sister           | 阿姑    | a^1^ gu^1^       |
+| Mother’s sister                 | 阿姨    | a^1^ yi^2^       |
+
+## Family - Paternal cousins
+
+| Word                                               | Chinese  | Romanisation         |
+|----------------------------------------------------|----------|----------------------|
+| Father’s brother’s sons                            | 叔伯兄弟 | suk^5^ bak^5^ xiung^1^ ti^4^ |
+| Father’s brother’s son (older than oneself)        | 叔伯阿哥 | suk^5^ bak^5^ a^1^ go^1^     |
+| Father’s brother’s son (younger than oneself)      | 叔伯老弟 | suk^5^ bak^5^ lo^3^ hai^1^   |
+| Father’s brother’s daughters                       | 叔伯姊妹 | suk^5^ bak^5^ ji^3^ moi^4^   |
+| Father’s brother’s daughter (older than oneself)   | 叔伯大姊 | suk^5^ bak^5^ tai^4^ ji^3^   |
+| Father’s brother’s daughter (younger than oneself) | 叔伯老妹 | suk^5^ bak^5^ lo^3^ moi^4^   |
+| Father’s sister’s sons                            | 表兄弟  | biau^3^ xiung^1^ ti^4^ |
+| Father’s sister’s son (older than oneself)        | 表哥    | biau^3^ go^1^        |
+| Father’s sister’s son (younger than oneself)      | 表弟    | biau^3^ ti^4^        |
+| Father’s sister’s daughters                       | 表姊妹  | biau^3^ ji^3^ moi^4^   |
+| Father’s sister’s daughter (older than oneself)   | 表姊    | biau^3^ ji^3^        |
+| Father’s sister’s daughter (younger than oneself) | 表妹    | biau^3^ moi^4^       |
+
+## Family - Maternal cousins
+
+| Word                                               | Chinese | Romanisation     |
+|----------------------------------------------------|---------|------------------|
+| Mother’s sibling’s sons                            | 表兄弟  | biau^3^ xiung^1^ ti^4^ |
+| Mother’s sibling’s son (older than oneself)        | 表哥    | biau^3^ go^1^        |
+| Mother’s sibling’s son (younger than oneself)      | 表弟    | biau^3^ ti^4^        |
+| Mother’s sibling’s daughters                       | 表姊妹  | biau^3^ ji^3^ moi^4^   |
+| Mother’s sibling’s daughter (older than oneself)   | 表姊    | biau^3^ ji^3^        |
+| Mother’s sibling’s daughter (younger than oneself) | 表妹    | biau^3^ moi^4^       |
+
+## Family - Parents-in-law 
+
+| Word             | Chinese | Romanisation   |
+|------------------|---------|----------------|
+| Husband’s father | 家官    | ga^1^ guon^1^      |
+| Husband’s mother | 家娘    | ga^1^ nyiong^^2^^    |
+| Wife’s father    | 丈人佬  | cong^1^ min^2^ lo^^3^^ |
+| Wife’s mother    | 丈人哀  | cong^1^ min^2^ oi^1^ |
+
+## Family - Siblings-in-law
+
+| Word                     | Chinese  | Romanisation       |
+|--------------------------|----------|--------------------|
+| Older brother’s wife     | 阿嫂     | a^1^ so^3^             |
+| Younger brother’s wife   | 老弟心臼 | lo^3^ hai^1^ sim^1^ kiu^1^ |
+| Older sister’s husband   | 姊丈     | ji^3^ cong^1^          |
+| Younger sister’s husband | 老妹婿   | lo^3^ moi^^4^^ se^4^       |
+| Husband’s older brother   | 大郎    | tai^4^ long^2^       |
+| Husband’s younger brother | 細郎    | se^4^ long^2^        |
+| Husband’s older sister    | 大娘姊  | tai^4^ nyiong^2^ ji^3^ |
+| Husband’s younger sister  | 小娘姑  | seu^3^ nyiong^2^ gu^1^ |
+| Wife’s brothers           | 妻舅哩  | qi^1^ kiu^1^ li^3^     |
+| Wife’s sister             | 姨哩    | yi^2^ li^3^          |
+
+## Family - Children-in-law
+
+| Word            | Chinese | Romanisation |
+|-----------------|---------|--------------|
+| Son-in-law      | 婿郎    | se^4^ long^2^    |
+| Daughter-in-law | 心臼    | sim^1^ kiu^1^    |
