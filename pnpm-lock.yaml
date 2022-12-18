@@ -6,6 +6,7 @@ specifiers:
   nextra-theme-docs: ^2.0.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  remark-supersub: ^1.0.0
 
 dependencies:
   next: 13.0.6_biqbaboplfbrettd7655fr4n2y
@@ -13,6 +14,7 @@ dependencies:
   nextra-theme-docs: 2.0.1_6jx7hpii6hgsrmhxgqrmo3277u
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  remark-supersub: 1.0.0
 
 packages:
 
@@ -1655,6 +1657,12 @@ packages:
       '@types/mdast': 3.0.10
       mdast-util-to-hast: 12.2.4
       unified: 10.1.2
+    dev: false
+
+  /remark-supersub/1.0.0:
+    resolution: {integrity: sha512-3SYsphMqpAWbr8AZozdcypozinl/lly3e7BEwPG3YT5J9uZQaDcELBF6/sr/OZoAlFxy2nhNFWSrZBu/ZPRT3Q==}
+    dependencies:
+      unist-util-visit: 4.1.1
     dev: false
 
   /remove-accents/0.4.2:
